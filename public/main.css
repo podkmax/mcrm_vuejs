@@ -1,0 +1,16 @@
+.cellos {
+    width:1em;
+    height: 5em;
+    background-color: #E3F2FD
+;
+    display: inline-block;
+    float: left;
+    border-width: 1px;
+    border-color: black;
+    border-style: dashed;
+}
+
+.top-cell {
+    height: 20px;
+    width: 72px;
+}

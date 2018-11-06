@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<h1>Запись на приём</h1>
+<table id="app2" border="1">
+    <tr >
+        <td class="top-cell" v-for="time in times">{{time}}</td>
+    </tr>
+    <tr>
+        <td v-for="time in times">
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+        </td>
+    </tr>
+    <tr>
+        <td v-for="time in times">
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+            <div class="cellos"></div>
+        </td>
+    </tr>
+</table>
+<script>
+    var start = 8.00;
+    var end = 16.00;
+    var iter = end - start;
+    var times = [];
+    for (i = 0; i <= iter; i++) {
+        if (i == 0) {
+            times[i] = start
+        } else {
+            start = start + 1;
+            times[i] = start;
+        }
+    }
+    var app2 = new Vue({
+        el: '#app2',
+        data: {
+            times: times,
+            seen: false
+        }
+    });
+</script>
+</body>
+</html>

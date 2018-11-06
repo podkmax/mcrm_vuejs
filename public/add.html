@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <!--<script src="https://unpkg.com/vuejs-datepicker"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="main.css">-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="app4">-->
+    <!--<label>Выберите дату:</label>-->
+    <!--<vuejs-datepicker></vuejs-datepicker>-->
+<!--</div>-->
+<div id="date_picker">
+    <label>Введите дату</label>
+        <input v-model="message" placeholder="В формате YYYY-MM-dd">
+        <button v-on:click="send_date">Отправить</button>
+</div>
+<div id="doc_select">
+    <label>Выберите врача:</label>
+    <select v-model="selected" v-on:change="test">
+        <option v-for="option in options" v-bind:value="option">
+            {{ option }}
+        </option>
+    </select>
+</div>
+<div id="slot_select">
+    <label>Выберите время:</label>
+    <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+            {{ option }}
+        </option>
+    </select>
+</div>
+<script src="add_timeslot.js"></script>
+</body>
+</html>

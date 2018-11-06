@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="set_timeSlot">
+    <label>Введите дату</label>
+    <input v-model="day" placeholder="В формате YYYY-MM-dd">
+    <p></p>
+    <label>Выберите врачей:</label>
+    <select multiple v-model="selected">
+        <option v-for="doctor in docName" v-bind:value="doctor">
+            {{ doctor }}
+        </option>
+    </select>
+    <p></p>
+    <button v-on:click="setTimeSlots">Отправить</button>
+</div>
+<script src="generate.js"></script>
+</body>
+</html>
